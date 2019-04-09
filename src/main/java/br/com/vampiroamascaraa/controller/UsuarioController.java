@@ -1,6 +1,7 @@
 package br.com.vampiroamascaraa.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -18,7 +19,7 @@ import br.com.vampiroamascara.domain.UsuarioInfo;
 import br.com.vampiroamascara.service.UsuarioService;
 
 @RestController
-@RequestMapping("/user")
+@RequestMapping(value = "/user", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
 public class UsuarioController {
 	@Autowired
 	private UsuarioService service;
